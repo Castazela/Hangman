@@ -19,7 +19,7 @@ random_word = random_word(new_words_list)
 #test
 #print(text)
 #print(new_words_list)
-print(random_word)
+#print(random_word)
 # print("Le mot à trouver est :")
 # print(' '.join(word_to_guess))
 
