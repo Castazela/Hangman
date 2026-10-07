@@ -5,8 +5,7 @@ from file_to_words_list import text_file_to_list
 from file_to_words_list import normalize_word
 from random_word import random_word
 from word_progress import word_to_guess_progression
-# from error_manage import error_manager
-# from secret import trophy
+from hangman import hangman
 
 # Choosing theme and print random word to guess with underscores
 theme_file = choosing_theme()
@@ -41,6 +40,7 @@ while not (word_progression == random_word or error_counter >= 10):
             # print("Nombre d'erreur :", error_counter)
             print("Cette lettre n'est pas dans le mot ! \n Les lettres incorrectes déjà proposées sont :", " ".join(
                 wrong_letters))
+            print(hangman[error_counter])
         print(word_progression)
         # test
         # print(repr(word_progression), repr(random_word), error_counter)
