@@ -14,20 +14,16 @@ text = read_file(theme_file)
 words_list = text_file_to_list(text)
 new_words_list = [normalize_word(word) for word in words_list]
 random_word = random_word(new_words_list)
+word_progression = word_to_guess_progression(random_word, []).replace(" ", "")
 print("Le mot à deviner est : ")
+print(word_progression)
 # test
 # print("random word :", random_word)
-word_to_guess_progression(random_word, [])
 
 # Starting game
-print("Proposez une lettre")
 letter_list = []
 wrong_letters = []
 error_counter = 0
-letter_list.append(input())
-word_progression = (word_to_guess_progression(
-    random_word, letter_list)).replace(" ", "")
-
 # test
 # print(repr(word_progression), repr(random_word), error_counter)
 
@@ -43,7 +39,8 @@ while not (word_progression == random_word or error_counter >= 10):
             error_counter += 1
             wrong_letters.append(proposed_letter)
             # print("Nombre d'erreur :", error_counter)
-            print("Cette lettre n'est pas dans le mot ! \n Les lettres incorrectes déjà proposées sont :", wrong_letters)
+            print("Cette lettre n'est pas dans le mot ! \n Les lettres incorrectes déjà proposées sont :", " ".join(
+                wrong_letters))
         print(word_progression)
         # test
         # print(repr(word_progression), repr(random_word), error_counter)

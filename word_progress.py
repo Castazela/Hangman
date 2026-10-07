@@ -5,5 +5,4 @@ def word_to_guess_progression(word: str, proposed_letter: list[str]) -> str:
             word_to_return.append(letter)
         else:
             word_to_return.append("_")
-    print(" ".join(word_to_return))
-    return " ".join(word_to_return)
+    return "".join(word_to_return)
