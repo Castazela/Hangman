@@ -28,24 +28,27 @@ error_counter = 0
 
 while not (word_progression == random_word or error_counter == 10):
     print("Proposez une lettre")
-    proposed_letter = input()
-    if proposed_letter not in letter_list:
-        letter_list.append(proposed_letter)
-        if proposed_letter in random_word:
-            word_progression = (word_to_guess_progression(
-                random_word, letter_list)).replace(" ", "")
-        else:
-            error_counter += 1
-            wrong_letters.append(proposed_letter)
-            # print("Nombre d'erreur :", error_counter)
-            print("Cette lettre n'est pas dans le mot ! \n Les lettres incorrectes déjà proposées sont :", " ".join(
-                wrong_letters))
-            print(hangman[error_counter])
-        print(word_progression)
-        # test
-        # print(repr(word_progression), repr(random_word), error_counter)
-    else:  # proposed lettre in letter list
-        print("Cette lettre a déjà été proposée")
+    proposed_letter = input().lower()
+    if len(proposed_letter) != 1 or not proposed_letter.isalpha():
+        print("Entrée erronée")
+    else:
+        if proposed_letter not in letter_list:
+            letter_list.append(proposed_letter)
+            if proposed_letter in random_word:
+                word_progression = (word_to_guess_progression(
+                    random_word, letter_list)).replace(" ", "")
+            else:
+                error_counter += 1
+                wrong_letters.append(proposed_letter)
+                # print("Nombre d'erreur :", error_counter)
+                print("Cette lettre n'est pas dans le mot ! \n Les lettres incorrectes déjà proposées sont :", " ".join(
+                    wrong_letters))
+                print(hangman[error_counter])
+            print(word_progression)
+            # test
+            # print(repr(word_progression), repr(random_word), error_counter)
+        else:  # proposed lettre in letter list
+            print("Cette lettre a déjà été proposée")
 
 if word_progression == random_word:
     print("C'est gagné !")
