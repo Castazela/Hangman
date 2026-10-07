@@ -26,7 +26,7 @@ error_counter = 0
 # test
 # print(repr(word_progression), repr(random_word), error_counter)
 
-while not (word_progression == random_word or error_counter >= 10):
+while not (word_progression == random_word or error_counter == 10):
     print("Proposez une lettre")
     proposed_letter = input()
     if proposed_letter not in letter_list:
@@ -46,3 +46,9 @@ while not (word_progression == random_word or error_counter >= 10):
         # print(repr(word_progression), repr(random_word), error_counter)
     else:  # proposed lettre in letter list
         print("Cette lettre a déjà été proposée")
+
+if word_progression == random_word:
+    print("C'est gagné !")
+else:
+    if error_counter == 10:
+        print("C'est perdu ! \n Le mot à deviné était :", random_word)
