@@ -16,12 +16,13 @@ new_words_list = [normalize_word(word) for word in words_list]
 random_word = random_word(new_words_list)
 print("Le mot à deviner est : ")
 # test
-# print(random_word)
+# print("random word :", random_word)
 word_to_guess_progression(random_word, [])
 
 # Starting game
 print("Proposez une lettre")
 letter_list = []
+wrong_letters = []
 error_counter = 0
 letter_list.append(input())
 word_progression = (word_to_guess_progression(
@@ -33,7 +34,6 @@ word_progression = (word_to_guess_progression(
 while not (word_progression == random_word or error_counter >= 10):
     print("Proposez une lettre")
     proposed_letter = input()
-    wrong_letters = []
     if proposed_letter not in letter_list:
         letter_list.append(proposed_letter)
         if proposed_letter in random_word:
@@ -42,6 +42,7 @@ while not (word_progression == random_word or error_counter >= 10):
         else:
             error_counter += 1
             wrong_letters.append(proposed_letter)
+            # print("Nombre d'erreur :", error_counter)
             print("Cette lettre n'est pas dans le mot ! \n Les lettres incorrectes déjà proposées sont :", wrong_letters)
         print(word_progression)
         # test
