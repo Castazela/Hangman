@@ -7,6 +7,8 @@ from file_to_words_list import normalize_word
 from get_random_word import get_random_word
 from word_progress import word_to_guess_progression
 from hangman import hangman
+from draws import trophy
+from draws import loser
 
 # Choosing theme and print random word to guess with underscores
 # theme_file = choosing_theme()
@@ -54,6 +56,8 @@ while not (word_progression == random_word or error_counter == 10):
 
 if word_progression == random_word:
     print("C'est gagné !")
+    print(trophy)
 else:
     if error_counter == 10:
         print("C'est perdu ! \n Le mot à deviné était :", random_word)
+        print(loser)
