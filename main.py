@@ -10,7 +10,7 @@ from hangman import hangman
 from draws import trophy
 from draws import loser
 from score_table import adding_ligne_in_table
-from score_table import print_score_table
+from score_table import get_score_table
 
 # Choosing theme and print random word to guess with underscores
 # theme_file = choosing_theme()
@@ -79,4 +79,4 @@ if menu == 1:
             print(loser)
 
 else:  # tableau des scores
-    print(print_score_table())
+    print(get_score_table())
