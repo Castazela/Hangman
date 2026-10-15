@@ -5,6 +5,7 @@
 from file_to_words_list import normalize_word
 # from random_word import random_word
 from get_random_word import get_random_word
+from get_random_word import choosen_theme
 from word_progress import word_to_guess_progression
 from hangman import hangman
 from draws import trophy
@@ -29,7 +30,8 @@ if menu == 1:
     # Starting gramme
     print("Entrez un nom d'utilisateur")
     user = input()
-    random_word = normalize_word(get_random_word())
+    theme = choosen_theme()
+    random_word = normalize_word(get_random_word(theme))
     word_progression = word_to_guess_progression(
         random_word, []).replace(" ", "")
     print("Le mot à deviner est : ")
@@ -67,14 +69,14 @@ if menu == 1:
 
     if word_progression == random_word:
         result = "Win"
-        adding_ligne_in_table(user, random_word, try_number, result)
+        adding_ligne_in_table(user, random_word, theme, try_number, result)
         print("C'est gagné !\nVous avez trouvé en", try_number, "essais.")
         print(trophy)
 
     else:
         if error_counter == 10:
             result = "Loose"
-            adding_ligne_in_table(user, random_word, try_number, result)
+            adding_ligne_in_table(user, random_word, theme, try_number, result)
             print("C'est perdu ! \n Le mot à deviné était :", random_word)
             print(loser)
 
