@@ -1,4 +1,5 @@
 import mysql.connector as mysql
+from tabulate import tabulate
 
 database = mysql.connect(
     host="localhost",
@@ -22,4 +23,4 @@ def get_score_table():
     mycursor.execute("SELECT * FROM game")
     myresult = mycursor.fetchall()
     mycursor.close()
-    return myresult
+    return tabulate(myresult, headers=["user_id", "Mot à deviner", "Nombre d'essais", "Résultat"], tablefmt='pretty')
