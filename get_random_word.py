@@ -17,11 +17,12 @@ theme_list = {
     7: "pays",
     8: "couleur",
     9: "objet",
-    10: "sport"}
+    10: "sport",
+    11: "pokemon"}
 
 
 def choosen_theme():
-    print("Choisissez parmi ces thèmes:\n   1 : Fruits et légumes\n   2 : Instruments\n   3 : Métiers\n   4 : Animaux\n   5 : Villes Françaises\n   6 : Personnages de dessin animé\n   7 : Pays\n   8 : Couleurs\n   9 : Objets\n   10 : Sports")
+    print("Choisissez parmi ces thèmes:\n   1 : Fruits et légumes\n   2 : Instruments\n   3 : Métiers\n   4 : Animaux\n   5 : Villes Françaises\n   6 : Personnages de dessin animé\n   7 : Pays\n   8 : Couleurs\n   9 : Objets\n   10 : Sports\n   11 : Pokémon")
     choice = int(input())
     theme = theme_list[choice]
     return theme
