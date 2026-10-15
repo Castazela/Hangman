@@ -9,6 +9,8 @@ from word_progress import word_to_guess_progression
 from hangman import hangman
 from draws import trophy
 from draws import loser
+from score_table import adding_ligne_in_table
+from score_table import print_score_table
 
 # Choosing theme and print random word to guess with underscores
 # theme_file = choosing_theme()
@@ -25,6 +27,8 @@ menu = int(input())
 
 if menu == 1:
     # Starting gramme
+    print("Entrez un nom d'utilisateur")
+    user = input()
     random_word = normalize_word(get_random_word())
     word_progression = word_to_guess_progression(
         random_word, []).replace(" ", "")
@@ -62,12 +66,17 @@ if menu == 1:
                 print("Cette lettre a déjà été proposée")
 
     if word_progression == random_word:
+        result = "Win"
+        adding_ligne_in_table(user, random_word, try_number, result)
         print("C'est gagné !\nVous avez trouvé en", try_number, "essais.")
         print(trophy)
+
     else:
         if error_counter == 10:
+            result = "Loose"
+            adding_ligne_in_table(user, random_word, try_number, result)
             print("C'est perdu ! \n Le mot à deviné était :", random_word)
             print(loser)
 
 else:  # tableau des scores
-    print("En cours de programmation")
+    print(print_score_table())
