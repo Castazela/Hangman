@@ -16,23 +16,27 @@ from draws import loser
 # words_list = text_file_to_list(text)
 # new_words_list = [normalize_word(word) for word in words_list]
 # random_word = random_word(new_words_list)
+# test
+# print("random word :", random_word)
+
+# Game menu -->
+
+
+# Starting gramme
 random_word = normalize_word(get_random_word())
 word_progression = word_to_guess_progression(random_word, []).replace(" ", "")
 print("Le mot à deviner est : ")
 print(word_progression)
-# test
-# print("random word :", random_word)
-
-# Starting game
 letter_list = []
 wrong_letters = []
 error_counter = 0
+try_number = 0
 # test
 # print(repr(word_progression), repr(random_word), error_counter)
-
 while not (word_progression == random_word or error_counter == 10):
     print("Proposez une lettre")
     proposed_letter = input().lower()
+    try_number += 1
     if len(proposed_letter) != 1 or not proposed_letter.isalpha():
         print("Entrée erronée")
     else:
@@ -55,7 +59,7 @@ while not (word_progression == random_word or error_counter == 10):
             print("Cette lettre a déjà été proposée")
 
 if word_progression == random_word:
-    print("C'est gagné !")
+    print("C'est gagné !\nVous avez trouvé en", try_number, "essais.")
     print(trophy)
 else:
     if error_counter == 10:
