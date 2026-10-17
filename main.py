@@ -25,8 +25,10 @@ from score_table import get_score_table
 # Game menu
 print("Que souhaitez vous faire ? \n1. Jouer au jeu\n2. Voir le tableau des scores")
 menu = int(input())
+game_id=0
 
 if menu == 1:
+    game_id+=1
     # Starting gramme
     print("Entrez un nom d'utilisateur")
     user = input()
@@ -75,7 +77,7 @@ if menu == 1:
 
     else:
         if error_counter == 10:
-            result = "Loose"
+            result = "Defeat"
             adding_ligne_in_table(user, random_word, theme, try_number, result)
             print("C'est perdu ! \n Le mot à deviné était :", random_word)
             print(loser)
