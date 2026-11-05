@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="DBE_MODULE" version="4">
   <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../../../../Fac/Master-2.0 bio-info/Cours/Bases de données &amp; interfaces web/TPs" />
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
