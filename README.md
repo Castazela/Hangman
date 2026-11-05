@@ -4,7 +4,6 @@
 ### Les fichiers permettant au joueur de jouer
 - *get_random_word* effectue une requête SQL dans la table des thèmes de la base de données *hangam.sql* après que le joueur est choisi son thème
 - *word_progress* permet la visualisation de la progression du joueur quand il joue. Les _ sont remplacés par les lettres si celles-ci sont justes.
-- *main*
 
 ### Les fichiers ajoutant une "animation au jeu"
 - *hangman* permet le dessin du pendu quand le joeur comment une erreur
